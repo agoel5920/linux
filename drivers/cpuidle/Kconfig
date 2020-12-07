@@ -71,6 +71,15 @@ config HALTPOLL_CPUIDLE
 	 before halting in the guest (more efficient than polling in the
 	 host via halt_poll_ns for some scenarios).
 
+config TEST_CPUIDLE
+	tristate "cpuidle test driver"
+	default n
+	help
+	  This option enables a testing cpuidle driver, which allows the user
+	  to define custom idle states with their respective latencies & residencies.
+	  This is useful for testing the behaviour of governors on different
+	  sets of idle states.
+
 endif
 
 config ARCH_NEEDS_CPU_IDLE_COUPLED
